@@ -48246,28 +48246,27 @@ Processing by AdsController#index as HTML
 Completed 200 OK in 330ms (Views: 322.3ms | ActiveRecord: 5.7ms)
 
 
-Started GET "/" for 127.0.0.1 at 2016-06-21 14:49:56 -0300
-  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Started GET "/ads" for 127.0.0.1 at 2016-06-21 15:03:46 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
 Processing by AdsController#index as HTML
-  [1m[35mAd Load (0.6ms)[0m  SELECT  `ads`.* FROM `ads` LIMIT 10 OFFSET 0
-  [1m[36mCreative Load (6.0ms)[0m  [1mSELECT `creatives`.* FROM `creatives` WHERE `creatives`.`ad_id` = 1[0m
-  [1m[35mTargeting Load (1.5ms)[0m  SELECT `targetings`.* FROM `targetings` WHERE `targetings`.`ad_id` = 1
-  [1m[36mPlace Load (1.1ms)[0m  [1mSELECT `places`.* FROM `places` WHERE `places`.`targeting_id` = 1[0m
+  [1m[35mAd Load (0.5ms)[0m  SELECT  `ads`.* FROM `ads` LIMIT 10 OFFSET 0
+  [1m[36mCreative Load (0.5ms)[0m  [1mSELECT `creatives`.* FROM `creatives` WHERE `creatives`.`ad_id` = 1[0m
+  [1m[35mTargeting Load (0.4ms)[0m  SELECT `targetings`.* FROM `targetings` WHERE `targetings`.`ad_id` = 1
+  [1m[36mPlace Load (0.4ms)[0m  [1mSELECT `places`.* FROM `places` WHERE `places`.`targeting_id` = 1[0m
   [1m[35mPlace Load (0.4ms)[0m  SELECT `places`.* FROM `places` WHERE `places`.`targeting_id` = 2
-  [1m[36mPlace Load (0.4ms)[0m  [1mSELECT `places`.* FROM `places` WHERE `places`.`targeting_id` = 3[0m
-  Rendered ads/index.html.erb within layouts/application (300.7ms)
-Completed 200 OK in 776ms (Views: 723.3ms | ActiveRecord: 28.1ms)
+  [1m[36mPlace Load (0.5ms)[0m  [1mSELECT `places`.* FROM `places` WHERE `places`.`targeting_id` = 3[0m
+  Rendered ads/index.html.erb within layouts/application (89.1ms)
+Completed 200 OK in 468ms (Views: 435.6ms | ActiveRecord: 14.9ms)
 
 
-Started GET "/ads/new" for 127.0.0.1 at 2016-06-21 14:50:03 -0300
-Processing by AdsController#new as HTML
-  Rendered ads/_creative_fields.html.erb (16.3ms)
-  Rendered ads/_creative_fields.html.erb (1.9ms)
-  Rendered ads/_place_fields.html.erb (2.4ms)
-  Rendered ads/_place_fields.html.erb (1.6ms)
-  Rendered ads/_targeting_fields.html.erb (27.9ms)
-  Rendered ads/_place_fields.html.erb (1.8ms)
-  Rendered ads/_targeting_fields.html.erb (9.9ms)
-  Rendered ads/_form.html.erb (130.4ms)
-  Rendered ads/new.html.erb within layouts/application (151.3ms)
-Completed 200 OK in 284ms (Views: 248.7ms | ActiveRecord: 0.0ms)
+Started GET "/ads" for 127.0.0.1 at 2016-06-21 15:07:01 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by AdsController#index as HTML
+  [1m[35mAd Load (0.5ms)[0m  SELECT  `ads`.* FROM `ads` LIMIT 10 OFFSET 0
+  [1m[36mCreative Load (0.6ms)[0m  [1mSELECT `creatives`.* FROM `creatives` WHERE `creatives`.`ad_id` = 1[0m
+  [1m[35mTargeting Load (0.4ms)[0m  SELECT `targetings`.* FROM `targetings` WHERE `targetings`.`ad_id` = 1
+  [1m[36mPlace Load (2.0ms)[0m  [1mSELECT `places`.* FROM `places` WHERE `places`.`targeting_id` = 1[0m
+  [1m[35mPlace Load (0.5ms)[0m  SELECT `places`.* FROM `places` WHERE `places`.`targeting_id` = 2
+  [1m[36mPlace Load (0.5ms)[0m  [1mSELECT `places`.* FROM `places` WHERE `places`.`targeting_id` = 3[0m
+  Rendered ads/index.html.erb within layouts/application (118.8ms)
+Completed 200 OK in 568ms (Views: 525.2ms | ActiveRecord: 17.8ms)

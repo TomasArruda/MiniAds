@@ -13,6 +13,6 @@ na pasta raiz.
 
 Para executar os testes bastas executar no terminal
 
-	bin/rake test test/controllers/ads_controller_test.rb
+	rake test test/controllers/ads_controller_test.rb
 
-na pasta raiz.
+na pasta bin.
