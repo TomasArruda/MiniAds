@@ -1,0 +1,17 @@
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">New Creative</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    <div class="field">
+      <%= f.label :bid %><br>
+      <%= f.number_field :bid, :class => 'text_field', :step => 'any' %>
+      <%= f.check_box :_destroy %>
+      <%= f.label :_destroy, 'remove' %>
+    </div>
+    <div class="field">
+      <%= f.label :adText %><br>
+      <%= f.text_field :adText %>
+    </div>
+  </div>
+</div>

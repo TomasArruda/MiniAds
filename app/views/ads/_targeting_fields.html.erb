@@ -1,0 +1,22 @@
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">New Targeting</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    <div class="field">
+      <%= f.label :gender %><br>
+      <%= f.radio_button :gender, "Undetermined" %>
+      <%= f.label :gender, "Undetermined", :value => "Undetermined"  %><br>
+      <%= f.radio_button :gender, "Male" %>
+      <%= f.label :gender, "Male", :value => "Male"  %><br>
+      <%= f.radio_button :gender, "Female" %>
+      <%= f.label :gender, "Female", :value => "Female" %><br>
+      <%= f.fields_for :places do |builderp| %>
+          <%= render "ads/place_fields", :f => builderp %>
+      <% end %>
+      <%= link_to_add_fields "Add Place", f, :places %>
+      <%= f.check_box :_destroy %>
+      <%= f.label :_destroy, 'remove' %>
+    </div>
+  </div>
+</div>

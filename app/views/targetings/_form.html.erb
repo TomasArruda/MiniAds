@@ -1,0 +1,10 @@
+<%= fields_for :targetings do |targeting| %>
+    <div class="targetings">
+      <div class="field">
+        <%= targeting.label :gender %>:
+        <%= targeting.text_field :gender %><br>
+        <%= targeting.check_box :_destroy %>
+        <%= targeting.label :_destroy, 'remove' %>
+      </div>
+    </div>
+<% end %>

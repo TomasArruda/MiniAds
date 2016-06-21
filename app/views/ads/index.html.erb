@@ -1,0 +1,51 @@
+<div class="mdl-card mdl-shadow--2dp" style="width: 70vw">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Ads</h2>
+  </div>
+  <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp" style="width: 100%">
+    <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Id</th>
+      <th>Budget</th>
+      <th>Creatives</th>
+      <th>Targetings</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @ads.each do |ad| %>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric"><%= ad.id %></td>
+          <td><%= quid(ad.budget) %></td>
+          <td style="text-align:right;">
+            <% ad.creatives.each do |creative| %>
+                bid: <%= quid(creative.bid) %><br>
+                text: <%= creative.adText %><br>
+            <% end %>
+          </td>
+          <td style="text-align:right;">
+            <% ad.targetings.each do |targeting| %>
+                gender: <%= targeting.gender %><br>
+                <% targeting.places.each do |place| %>
+                    place: <%= place.place %><br>
+                <% end %>
+            <% end %>
+          </td>
+          <td style="text-align:right;">
+            <%= link_to "Show", ad_path(ad.id) %> |
+            <%= link_to "Edit", edit_ad_path(ad.id) %> |
+            <%= link_to 'Destroy', ad_path(ad), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @ads %>
+  <div class="mdl-card__menu">
+    <form action='/ads/new'>
+      <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" >
+        <i class="material-icons">add</i>
+      </button>
+    </form>
+  </div>
+</div>
+

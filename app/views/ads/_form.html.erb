@@ -1,0 +1,37 @@
+<%= form_for(@ad) do |f| %>
+
+    <% if @ad.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@ad.errors.count, "error") %> prohibited this ad from being saved:</h2>
+          <ul>
+            <% @ad.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :budget %><br>
+      <%= f.number_field :budget, :class => 'text_field', :step => 'any' %>
+    </div>
+    <br>
+    <%= f.fields_for :creatives do |builderc| %>
+        <%= render "ads/creative_fields", :f => builderc %>
+    <% end %>
+
+    <%= link_to_add_fields "Add Creative", f, :creatives %><br>
+
+    <br>
+    <%= f.fields_for :targetings do |buildert| %>
+        <%= render "ads/targeting_fields", :f => buildert %>
+    <% end %>
+
+    <%= link_to_add_fields "Add Targetings", f, :targetings %><br>
+
+
+    <div class="actions"></br>
+      <%= f.submit :class =>"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+    </div>
+<% end %>
+

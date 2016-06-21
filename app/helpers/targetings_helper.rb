@@ -1,0 +1,2 @@
+module TargetingsHelper
+end

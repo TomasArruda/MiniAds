@@ -1,0 +1,52 @@
+
+<div class="mdl-card mdl-shadow--2dp" style="width: 50vw">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Ad <%= @ad.id %></h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    <p>
+      <strong>Budget:</strong>
+      <%= quid(@ad.budget) %>
+    </p>
+    <% if @ad.creatives.any? %>
+        <ul>
+          <% @ad.creatives.each do |build| %>
+              <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title">
+                  <h2 class="mdl-card__title-text">Creatives</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                  <strong>bid:</strong>
+                  <%= quid(build.bid) %><br>
+                  <strong>Ad Text:</strong>
+                  <%= build.adText %><br>
+                </div>
+              </div>
+          <% end %>
+        </ul>
+    <% end %>
+    <% if @ad.targetings.any? %>
+        <ul>
+          <% @ad.targetings.each do |build| %>
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">Targetings</h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <strong>Gender:</strong>
+                <%= build.gender %><br><br>
+                <% if build.places.any? %>
+                    <% build.places.each do |buildp| %>
+                        <strong>Place:</strong>
+                        <%= buildp.place %><br>
+                    <% end %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </ul>
+    <% end %>
+    <%= link_to 'Edit', edit_ad_path(@ad) %> |
+    <%= link_to 'Back', ads_path %>
+  </div>
+</div>

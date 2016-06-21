@@ -1,0 +1,2 @@
+module AdControllerHelper
+end

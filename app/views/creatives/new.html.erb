@@ -1,0 +1,21 @@
+<%= form_for(@creative) do |f| %>
+
+    <div class="field">
+      <%= f.label :bid %><br>
+      <%= f.text_field :bid %>
+    </div>
+
+    <div class="field">
+      <%= f.label :adText %><br>
+      <%= f.text_field :adText %>
+    </div>
+
+    <div class="field">
+      <%= f.label :ads_id %><br>
+      <%= f.number_field :ads_id %>
+    </div>
+
+    <div class="actions"></br>
+      <%= f.submit %>
+    </div>
+<% end %>

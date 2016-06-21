@@ -1,0 +1,10 @@
+<%= fields_for :places do |place| %>
+    <div class="places">
+      <div class="field">
+        <%= place.label :gender %>:
+        <%= place.text_field :gender %><br>
+        <%= place.check_box :_destroy %>
+        <%= place.label :_destroy, 'remove' %>
+      </div>
+    </div>
+<% end %>

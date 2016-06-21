@@ -1,0 +1,24 @@
+
+<h1>All creatives</h1>
+<table style="width:500px">
+  <thead>
+  <tr>
+    <th>id</th>
+    <th style="text-align:right;">bid</th>
+    <th style="text-align:right;">adText</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @creatives.each do |creative| %>
+      <tr>
+        <td><%= creative.id %>
+        </td>
+        <td style="text-align:right;"><%=  creative.bid %></td>
+        <td style="text-align:right;"><%=  creative.adText %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= will_paginate @ads %>
+<%= button_to "Create creative", '/creatives/new', :method => "get" %>
+

@@ -1,0 +1,16 @@
+I"Ç(function() {
+  $(document).on('click', 'form .remove_fields', function(event) {
+    event.preventDefault();
+    return $(this).closest('.field').remove();
+  });
+
+  $(document).on('click', 'form .add_fields', function(event) {
+    var regexp, time;
+    event.preventDefault();
+    time = new Date().getTime();
+    regexp = new RegExp($(this).data('id'), 'g');
+    return $(this).before($(this).data('fields').replace(regexp, time));
+  });
+
+}).call(this);
+:ET
